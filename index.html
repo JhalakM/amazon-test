@@ -1,0 +1,136 @@
+<html>
+	<head>
+		<title>Test Notes</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<style>
+			body{
+				margin: 0;
+				font-family: 'Roboto', sans-serif;
+				font-size: 14px;
+			}
+			.wrapper{
+				max-width: 600px;
+				margin: 10px auto;
+				border: 1px solid #d8d8d8;
+				padding: 10px;
+			}
+			.back-to-list {
+				float: right;
+				font-size: 12px;
+				line-height: 22px;
+			}
+			.add-btn{
+				float: right;
+			}
+			.form-row {
+				margin-bottom: 5px;
+			}
+			.form-row div > * {
+				min-width: 265px;
+				font-family: 'Roboto', sans-serif;
+				width: 100%;
+				padding: 5px;
+			}
+			a {
+				color: #000;
+				text-decoration: none;
+			}
+			.add-section {
+				padding: 0 0 10px;
+				border-bottom: 1px solid #d8d8d8;
+			}
+			#notes-list {
+				list-style: none;
+				padding: 0;
+				margin: 10px 0 0;
+			}
+			#notes-list li {
+				padding: 5px 20px 5px 5px;
+				position: relative;
+				margin-bottom: 5px;
+				background-color: #efefef;
+			}
+			.form-row:last-child ,#notes-list li:last-child {
+				margin-bottom: 0;
+			}
+			.delete-note {
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				font-weight: bold;
+			}
+			.back-to-list{
+				float: right;
+			}
+			h3 {
+				margin: 0;
+				font-size: 18px;
+				margin-bottom: 5px;
+			}
+			button[name=back]{
+				margin-left: 5px;
+			}
+			label {
+				font-size: 13px;
+				line-height: 20px;
+			}
+			.view-content {
+				padding: 5px;
+			}
+			input[type="button"] {
+				font-family: roboto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<section id="list-notes">
+				<article>
+					<div class="add-section">
+						<span>List of notes</span>
+						<span class="add-btn">
+							<input type="button" name="btnAdd" value="Add Note">
+						</span>
+					</div>
+					<ul id="notes-list">
+						<li>No list available</li>
+					</ul>
+				</article>
+			</section>
+			<section id="view-note" style="display:none;">
+				<article>
+					<h3><span class="title"></span><span><a class="back-to-list" href="javascript:void(0)">Back to List</a></span></h3>
+					<div class="view-content"></div>
+				</article>
+			</section>
+			<section id="add-form" style="display:none;">
+				<article>
+					<!-- <form action="" method="POST"> -->
+						<div class="form-row">
+							<label>Note Name*</label>
+							<div><input type="text" name="noteName" maxlength="100"></div>
+						</div>
+						<div class="form-row">
+							<label>Note Content</label>
+							<div><textarea name="noteContent"></textarea></div>
+						</div>
+						<div class="form-row">
+							<label>Note Color</label>
+							<div>
+								<select name="noteColor">
+									<option value="#efefef" selected>None</option>
+									<option value="#ff0">Yellow</option>
+									<option value="#0f0">Green</option>
+									<option value="#0ff">Cyan</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-row"><button type="submit" name="saveNote">Save Note</button><button type="submit" name="back">Back</button></div>
+					<!-- </form> -->
+				</article>
+			</section>
+		</div>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>
